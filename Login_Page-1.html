@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login Page</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <style>
+        .error {
+            color: red;
+            font-size: 14px;
+            margin-top: 5px;
+            display: block;
+        }
+        .Login1 {
+            display: flex;
+            flex-direction: column;
+            margin: 50px;
+            padding: 20px;
+            border:solid black;
+            box-shadow: 5px 5px 10px black;
+            border-radius: 5px;
+        }
+        .Icons1 {
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="Navigation">
+            <a href="$" class="Logo">
+                <img src="G.S.R.T.C Logo.png" alt="GSRTC" class="GSRTC">
+                Easy Booking
+            </a>
+            <nav class="Navbar">
+                <a href="index.html">
+                    <div class="Icon_Logo"><i class="fa-solid fa-house"></i></div>
+                    <div class="Icon_Name">Home</div>
+                </a>
+                <a href="Bus_Page.html">
+                    <div class="Icon_Logo"><i class="fa-solid fa-bus"></i></div>
+                    <div class="Icon_Name">Bus</div>
+                </a>
+                <a href="Route_Page.html">
+                    <div class="Icon_Logo"><i class="fa-solid fa-route"></i></div>
+                    <div class="Icon_Name">Route</div>
+                </a>
+
+                <a href="Information_Page.html">
+                    <div class="Icon_Logo"><i class="fa-solid fa-circle-info"></i></div>
+                    <div class="Icon_Name">Information</div>
+                </a>
+                <a href="Reservation_Page.html">
+                    <div class="Icon_Logo"><i class="fa-solid fa-ticket"></i></div>
+                    <div class="Icon_Name">Reservation</div>
+                </a>
+                <a href="Login_Page.html">
+                    <div class="Icon_Logo"><i class="fa-solid fa-right-to-bracket"></i></div>
+                    <div class="Icon_Name">Login</div>
+                </a>
+            </nav>
+         </div>
+    </header>
+
+    <form action="admin_dashboard.html" method="POST">
+        <div class="Login1">
+            <h2>Admin Log In</h2>
+            <input type="text" name="AdminUsername" id="AdminUsername" placeholder="Admin Username">
+            <div id="error-admin-username" class="error"></div>
+            
+            <input type="password" name="AdminPassword" id="AdminPassword" placeholder="Admin Password">
+            <div id="error-admin-password" class="error"></div>
+            
+            <button type="submit" id="admin-login-btn">Log In</button>
+            
+            <div class="Icons1">
+                <i class="fa-brands fa-google"></i>
+                <a href="#">Sign In With Google</a>
+            </div>
+            <div class="Icons1">
+                <i class="fa-brands fa-facebook"></i>
+                <a href="#">Sign In With Facebook</a>
+            </div>
+        </div>
+    </form>
+
+    <footer>
+        <hr>
+        Copyright © 2024 Easy My Trip Ltd. All Rights Are Reserved
+    </footer>
+
+    <script>
+        document.getElementById('admin-login-btn').addEventListener('click', function(event) {
+            // Get input values
+            let adminUsername = document.getElementById('AdminUsername').value.trim();
+            let adminPassword = document.getElementById('AdminPassword').value.trim();
+            let valid = true;
+
+            // Clear previous error messages
+            document.getElementById('error-admin-username').textContent = '';
+            document.getElementById('error-admin-password').textContent = '';
+
+            // Validation logic
+            if (adminUsername === '') {
+                document.getElementById('error-admin-username').textContent = 'Admin username is required.';
+                valid = false;
+            }
+
+            if (adminPassword === '') {
+                document.getElementById('error-admin-password').textContent = 'Admin password is required.';
+                valid = false;
+            }
+
+            // Prevent form submission if validation fails
+            if (!valid) {
+                event.preventDefault();
+            }
+        });
+    </script>
+</body>
+</html>

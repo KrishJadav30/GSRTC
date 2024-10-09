@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Route Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* 
+    {
+        margin: 0%;
+        padding: 0%;  
+        text-align: center;
+        box-sizing: border-box;
+        font-family: "Fira Sans", sans-serif;
+    }
+
+body
+    {
+        background-color: aliceblue;
+        justify-content: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 10px;
+        margin-bottom: 0px;
+        border: solid black; 
+        position: relative;
+    }
+
+header
+    {
+        margin: 0px;
+        padding: 0px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 70%;
+        position: sticky;
+        z-index: 99;
+        top: 10px;
+    }
+    
+h1
+    {
+        font-size: 50px;
+        margin: 15px 15% 35px 15%;
+        padding: 30px;
+        font-weight: 700;
+        text-shadow: 1px 1px 2px;
+        border: solid black;
+        border-radius: 50px;
+        box-shadow: 7.5px 5px 10px 5px;
+    }
+
+.Navigation
+    {
+        width: 120%;
+        margin: 10px;
+        background-color: white;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        border: solid black;
+        border-radius: 50px;
+    }
+
+.Navbar
+    {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+.Navbar a
+    {
+        color: black;
+        font-size: 20px;
+        padding: 4px;
+        font-weight: 700;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        text-decoration: none;
+        margin: 15px;
+        width: 75px;
+        border: solid white;
+    }
+
+.Icon_Logo
+    {
+        font-size: 30px;
+        margin: 5px;
+        opacity: 1;
+        transition: all 100ms ease-out;
+    }
+
+.Icon_Logo:hover
+    {
+      transform: scale(0.8);
+      transition: all 300ms ease-in-out;
+    }
+
+.Navbar a:hover .Icon_Name
+    {
+        opacity: 1;
+    }
+
+.Icon_Name
+    {
+        font-size: 20px;
+        opacity: 0;
+        margin: 5px;
+    }
+
+.Icon_Name:hover
+    {
+      opacity: 1;
+    }
+
+.Search a
+    {
+        color: black;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+.Route_Form
+    {
+        border: solid black;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 50%;
+        margin: 15px 15% 35px 15%;
+        box-shadow: 7.5px 5px 10px 5px;
+    }
+
+    .Route_Form h2
+       {
+        font-size: 40px;
+        margin: 15px;
+       }
+
+.Route_Form1
+    {
+        display: flex;
+        flex-direction: row;
+        text-align: center;
+        align-items: center;
+        justify-content: space-between;
+        font-size: 30px;
+        font-weight: 500;
+        margin: 25px;
+    }
+
+.Route_Form1 p
+    {
+        width: 300px;
+    }
+
+    .GSRTC
+    {
+        height: 85px;
+        width: 85px;
+        margin: 20px;
+        padding: 0px;
+        border: solid black;
+        border-radius: 100%;
+        color: black;
+        box-shadow: 3.5px 2.5px 5px 2.5px;
+    }
+    button
+    {
+        width: 100px;
+        height: 35px;
+        margin: 20px;
+        cursor: pointer;
+        color: white;
+        background-color: rgb(73, 73, 206);
+        border: solid black;
+        border-radius: 50px;
+    }
+    footer
+    {
+        width: 100%;
+        font-size: 20px;
+        margin: 10px;
+        margin-bottom: 0px;
+        padding: 15px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        background-color: rgb(45, 45, 45);
+        color: whitesmoke;
+    }
+
+footer hr
+    {
+        width: 100%;
+        height: 3px;
+        margin: 15px;
+        background-color: whitesmoke;
+    }
+    button
+    {
+        width: 100px;
+        height: 35px;
+        margin: 20px;
+        cursor: pointer;
+        color: white;
+        background-color: rgb(73, 73, 206);
+        border: solid black;
+        border-radius: 50px;
+    }
+
+.Icons
+    {
+     margin: 20px;
+     padding: 20px;
+     border: solid black;
+     background-color: rgb(90, 150, 250);
+     border-radius: 100px;
+     display: flex;
+     align-items: center;
+     align-self: center;
+     align-content: center;
+    }
+
+.Icons1
+    {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        margin: 5px;
+        padding: 5px;
+        align-items: center;
+        border: solid black;
+        border-radius: 50px;
+    }
+
+.Icons1 a
+    {
+        text-decoration: none;
+        margin: 4px;
+        color: black;
+        font-size: 15px;
+        font-weight: 500;
+    }
+
+p
+    {
+        margin: 15px 5px;
+        text-align: inherit;
+    }
+    input
+    {
+        width: 200px;
+        height: 50px;
+        margin: 15px;
+        border: solid black;
+        border-radius: 7.5px;
+        font-size: 15px;
+    }
+
+select
+    {
+        width: 200px;
+        height: 40px;
+        margin: 15px;
+        border: solid black;
+        border-radius: 7.5px;
+        font-size: 15px;
+    }
+
+.Departure
+    {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+.Departure select
+    {
+        width: 50px;
+        margin: 10px;
+        font-size: 15px;
+    }
+
+.Logo
+    {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        text-decoration: none;
+        color: black;
+        font-size: 20px;
+        font-weight: bolder;
+        animation-name: Style;
+        animation-duration: 4s;
+        animation-iteration-count: infinite;
+    }
+
+@keyframes Style
+    {
+      0%{transform:scale(1)}
+      25%{transform:scale(1.10);}
+      50%{transform:scale(0.90);}
+      75%{transform:scale(1.10);}
+      100%{transform:scale(1);}
+    }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="Navigation">
+            <a href="#" class="Logo">
+                <img src="G.S.R.T.C Logo.png" alt="GSRTC" class="GSRTC">
+                Easy Booking
+            </a>
+            <nav class="Navbar">
+                <a href="index.html">
+                    <div class="Icon_Logo"><i class="fa-solid fa-house"></i></div>
+                    <div class="Icon_Name">Home</div>
+                </a>
+                <a href="Bus_Page.html">
+                    <div class="Icon_Logo"><i class="fa-solid fa-bus"></i></div>
+                    <div class="Icon_Name">Bus</div>
+                </a>
+                <a href="Route_Page.html">
+                    <div class="Icon_Logo"><i class="fa-solid fa-route"></i></div>
+                    <div class="Icon_Name">Route</div>
+                </a>
+
+                <a href="Information_Page.html">
+                    <div class="Icon_Logo"><i class="fa-solid fa-circle-info"></i></div>
+                    <div class="Icon_Name">Information</div>
+                </a>
+                <a href="Reservation_Page.html">
+                    <div class="Icon_Logo"><i class="fa-solid fa-ticket"></i></div>
+                    <div class="Icon_Name">Reservation</div>
+                </a>
+                <a href="Login_Page.html">
+                    <div class="Icon_Logo"><i class="fa-solid fa-right-to-bracket"></i></div>
+                    <div class="Icon_Name">Login</div>
+                </a>
+            </nav>
+         </div>
+    </header>
+    <div class="Route_Form">
+        <div class="Route_Form1">
+            <p>Starting Point:</p>
+            <input type="text" name="Starting Point" id="Starting Point" placeholder="Enter Starting Point">
+        </div>
+        <div class="Route_Form1">
+            <p>Destination Point:</p>
+            <input type="text" name="Destination Point" id="Destination Point" placeholder="Enter Destination Point">
+        </div>
+        <div class="Route_Form1">
+            <p>Bus type:</p>
+            <select name="BusType" id="BusType">
+                <option value="#">All</option>
+                <option value="#">Volvo Seater</option>
+                <option value="#">Volvo Sleeper</option>
+                <option value="#">A.C Seater</option>
+                <option value="#">A.C Sleeper</option>
+                <option value="#">Express</option>
+                <option value="#">Local</option>
+                <option value="#">Mini Bus</option>
+                <option value="#">Luxury</option>
+            </select>
+        </div>
+        <div class="Route_Form1">
+            <p>Departure Time:</p>
+            <div class="Departure">
+                <select name="Hour" id="Hour">
+                    <option value="#">1</option>
+                    <option value="#">2</option>
+                    <option value="#">3</option>
+                    <option value="#">4</option>
+                    <option value="#">5</option>
+                    <option value="#">6</option>
+                    <option value="#">7</option>
+                    <option value="#">8</option>
+                    <option value="#">9</option>
+                    <option value="#">10</option>
+                    <option value="#">11</option>
+                    <option value="#">12</option>
+                </select>
+                <select name="Miniute" id="Miniute">
+                    <option value="#">00</option>
+                    <option value="#">10</option>
+                    <option value="#">20</option>
+                    <option value="#">30</option>
+                    <option value="#">40</option>
+                    <option value="#">50</option>
+                    <option value="#">60</option>
+                </select>
+                <select name="AMPM" id="AMPM">
+                    <option value="#">AM</option>
+                    <option value="#">PM</option>
+                </select>
+            </div>
+            </div>
+            <button type="submit">Search Bus</button>  
+        </div>   
+    </div>
+    <footer>
+        <hr>
+        Copyright © 2024 Easy My Trip Ltd. All Rights Are Reserved
+    </footer> 
+</body>
+</html>

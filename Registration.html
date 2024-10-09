@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Registration Page</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <style>
+        .error {
+            color: red;
+            font-size: 14px;
+            margin-top: 5px;
+            display: block;
+        }
+        .Registration {
+            display: flex;
+            flex-direction: column;
+            width: 450px;
+            align-items: center;
+            margin: 50px;
+            padding: 20px;
+            border: solid black;
+            box-shadow: 5px 5px 10px black;
+            border-radius: 5px;
+        }
+        input{
+            width: 300px;
+        }
+        .Icons {
+            margin-top: 15px;
+            height: 20px;
+        }
+
+        a {
+            text-decoration: none;
+            color: black;
+            margin: 0px 5px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="Navigation">
+            <a href="#" class="Logo">
+                <img src="G.S.R.T.C Logo.png" alt="GSRTC" class="GSRTC">
+                Easy Booking
+            </a>
+            <nav class="Navbar">
+                <a href="index.html">
+                    <div class="Icon_Logo"><i class="fa-solid fa-house"></i></div>
+                    <div class="Icon_Name">Home</div>
+                </a>
+                <a href="Bus_Page.html">
+                    <div class="Icon_Logo"><i class="fa-solid fa-bus"></i></div>
+                    <div class="Icon_Name">Bus</div>
+                </a>
+                <a href="Route_Page.html">
+                    <div class="Icon_Logo"><i class="fa-solid fa-route"></i></div>
+                    <div class="Icon_Name">Route</div>
+                </a>
+
+                <a href="Information_Page.html">
+                    <div class="Icon_Logo"><i class="fa-solid fa-circle-info"></i></div>
+                    <div class="Icon_Name">Information</div>
+                </a>
+                <a href="Reservation_Page.html">
+                    <div class="Icon_Logo"><i class="fa-solid fa-ticket"></i></div>
+                    <div class="Icon_Name">Reservation</div>
+                </a>
+                <a href="Registration.html">
+                    <div class="Icon_Logo"><i class="fa-solid fa-address-card"></i></div>
+                    <div class="Icon_Name">Registration</div>
+                </a>
+                <a href="Login_Page.html">
+                    <div class="Icon_Logo"><i class="fa-solid fa-right-to-bracket"></i></div>
+                    <div class="Icon_Name">Login</div>
+                </a>
+            </nav>
+         </div>
+    </header>
+
+    <form action="welcome.html" method="POST">
+        <div class="Registration">
+            <h2>User Registration</h2>
+            <input type="text" name="Username" id="Username" placeholder="Username">
+            <div id="error-username" class="error"></div>
+            
+            <input type="email" name="Email" id="Email" placeholder="Email">
+            <div id="error-email" class="error"></div>
+            
+            <input type="password" name="Password" id="Password" placeholder="Password">
+            <div id="error-password" class="error"></div>
+            
+            <input type="text" name="Phone" id="Phone" placeholder="Phone Number">
+            <div id="error-phone" class="error"></div>
+            
+            <button type="submit" id="register-btn">Register</button>
+            
+            <div class="Icons">
+                <i class="fa-brands fa-google"></i>
+                <a href="#">Sign Up With Google</a>
+            </div>
+            <div class="Icons">
+                <i class="fa-brands fa-facebook"></i>
+                <a href="#">Sign Up With Facebook</a>
+            </div>
+        </div>
+    </form>
+
+    <footer>
+        <hr>
+        Copyright © 2024 Easy My Trip Ltd. All Rights Reserved
+    </footer>
+
+    <script>
+        document.getElementById('register-btn').addEventListener('click', function(event) {
+            // Get input values
+            let username = document.getElementById('Username').value.trim();
+            let email = document.getElementById('Email').value.trim();
+            let password = document.getElementById('Password').value.trim();
+            let phone = document.getElementById('Phone').value.trim();
+            let valid = true;
+
+            // Clear previous error messages
+            document.getElementById('error-username').textContent = '';
+            document.getElementById('error-email').textContent = '';
+            document.getElementById('error-password').textContent = '';
+            document.getElementById('error-phone').textContent = '';
+
+            // Validation logic
+            if (username === '') {
+                document.getElementById('error-username').textContent = 'Username is required.';
+                valid = false;
+            }
+
+            if (email === '') {
+                document.getElementById('error-email').textContent = 'Email is required.';
+                valid = false;
+            } else if (!/\S+@\S+\.\S+/.test(email)) {
+                document.getElementById('error-email').textContent = 'Email is invalid.';
+                valid = false;
+            }
+
+            if (password === '') {
+                document.getElementById('error-password').textContent = 'Password is required.';
+                valid = false;
+            }
+
+            if (phone === '') {
+                document.getElementById('error-phone').textContent = 'Phone number is required.';
+                valid = false;
+            } else if (!/^\d{10}$/.test(phone)) {
+                document.getElementById('error-phone').textContent = 'Phone number must be 10 digits.';
+                valid = false;
+            }
+
+            // Prevent form submission if validation fails
+            if (!valid) {
+                event.preventDefault();
+            }
+        });
+    </script>
+</body>
+</html>
